@@ -24,8 +24,8 @@ adb connect "$SERIAL"
 #eval "$eval_adb" shell getprop ro.build.version.sdk
 #eval "$eval_adb_shell" ls -l /data/local/tmp
 
-eval "$eval_adb" push "$s_apk1 $t_apk1"
-eval "$eval_adb" push "$s_apk2 $t_apk2"
+eval "$eval_adb" push "$s_apk1" "$t_apk1"
+eval "$eval_adb" push "$s_apk2" "$t_apk2"
 eval "$eval_adb_shell" pm uninstall com.le.tcauto.uitest
 eval "$eval_adb_shell" pm uninstall com.le.tcauto.uitest.test
 
