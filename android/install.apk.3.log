@@ -1,0 +1,41 @@
+xianke@XancL03:/work/thomas/projects/bash-samples$ /bin/bash -x /work/thomas/projects/bash-samples/android/install.apk.3.sh com.le.tcauto.uitest ./android/app-debug.apk
++ pkg_name=com.le.tcauto.uitest
++ '[' '!' -f ./android/app-debug.apk ']'
++ apk_path=./android/app-debug.apk
+++ basename -- ./android/app-debug.apk
++ apk_file=app-debug.apk
++ DST_DIR=/data/local/tmp
++ t_apk=/data/local/tmp/app-debug.apk
++ SERIAL=972-1e:5555
++ adb disconnect 972-1e:5555
+disconnected 972-1e:5555
++ adb connect 972-1e:5555
+connected to 972-1e:5555
++ export ANDROID_SERIAL=972-1e:5555
++ ANDROID_SERIAL=972-1e:5555
+++ adb shell pm list package com.le.tcauto.uitest
+++ wc -l
++ pkg_num=2
++ '[' 2 -gt 0 ']'
++ adb uninstall com.le.tcauto.uitest
+Success
++ adb push ./android/app-debug.apk /data/local/tmp/app-debug.apk
+./android/app-debug.apk: 1 file pushed, 0 skipped. 3208.3 MB/s (2181935 bytes in 0.001s)
+++ adb shell getprop ro.build.version.sdk
++ sdk=28
++ '[' 28 -lt 23 ']'
++ adb shell pm install -g -r /data/local/tmp/app-debug.apk
+Success
+
+xianke@XancL03:/work/thomas/projects/bash-samples$ /bin/bash /work/thomas/projects/bash-samples/android/install.apk.3.sh com.le.tcauto.uitest ./android/app-debug.apk
+disconnected 972-1e:5555
+connected to 972-1e:5555
+Success
+./android/app-debug.apk: 1 file pushed, 0 skipped. 3499.2 MB/s (2181935 bytes in 0.001s)
+Success
+xianke@XancL03:/work/thomas/projects/bash-samples$ /bin/bash /work/thomas/projects/bash-samples/android/install.apk.3.sh com.le.tcauto.uitest.test ./android/app-debug-androidTest.apk
+disconnected 972-1e:5555
+connected to 972-1e:5555
+Success
+./android/app-debug-androidTest.apk: 1 file pushed, 0 skipped. 8.3 MB/s (140326 bytes in 0.016s)
+Success
